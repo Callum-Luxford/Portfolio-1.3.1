@@ -133,6 +133,7 @@ i {
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
+    border-radius: 20px;
 }
 
 .portfolio-item {
@@ -140,6 +141,14 @@ i {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    transition: transform 1s ease;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-14px)
 }
 
 .square1 {
