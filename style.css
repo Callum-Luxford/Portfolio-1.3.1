@@ -134,22 +134,136 @@ i {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     border-radius: 20px;
+    text-align: center;
+    font-size: 1.2rem;
 }
 
 .portfolio-item {
     background-color: orange;
-    display: flex;
-    justify-content: center;
+    display: grid;
     align-items: center;
+    justify-content: center;
     position: relative;
     transition: transform 1s ease;
     border-radius: 20px;
     overflow: hidden;
+    padding: 1rem 5rem;
+    color: white;
 }
 
-.portfolio-item:hover {
-    transform: translateY(-14px)
+.portfolio-item p {
+    font-style: italic;
+    font-family: serif;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    opacity: 0;
+    transition: opacity 550ms 100ms;
 }
+
+.portfolio-item:hover p,
+.portfolio-item:focus-within p {
+    opacity: 1;
+}
+
+.portfolio-item .button {
+    background: black;
+    color: white;
+    padding: 0.8rem;
+    margin: 0 5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.portfolio-item .button:hover {
+    background: #333;
+}
+
+.card-content {
+   display: grid;
+   gap: 3rem; 
+}
+
+
+ .card-content {
+    transform: translateY(calc(100% - -0.5rem));
+    transition: transform 550ms;
+} 
+
+.portfolio-item:hover .card-content, .square1:focus-within .card-content {
+    transform: translateY(0);
+}
+
+.card-content > :not(.item-title) {
+    transform: translateY(50%)
+    transition: opacity 550ms 100ms;
+}
+
+.portfolio-item:hover .card-content :not(.item-title), 
+.portfolio-item:focus-within .card-content :not(.item-title) {
+    transform: translateY(0%)
+}
+
+.square1 {
+    background-image: url(./Assets/pexels-valentin-antonucci-1378723.jpg);
+    background-position: center top;
+    background-size: 105% 105%;
+    transition: background-position 350ms;
+
+    overflow: hidden;
+}
+
+
+.square1:hover, .square1:focus-within {
+    background-position: center bottom;
+}
+
+.square2 {
+    background-image: url(./Assets/pexels-andrea-piacquadio-840996.jpg);
+    background-position: center top;
+    background-size: 105% 105%;
+    transition: background-position 350ms;
+
+    overflow: hidden;
+}
+
+
+.square2:hover, .square1:focus-within {
+    background-position: center bottom;
+}
+
+.square3 {
+    background-image: url(./Assets/pexels-ivan-samkov-4164651.jpg);
+    background-position: center top;
+    background-size: 105% 105%;
+    transition: background-position 350ms;
+
+    overflow: hidden;
+}
+
+
+.square3:hover, .square1:focus-within {
+    background-position: center bottom;
+}
+
+.square4 {
+    background-image: url(./Assets/movie.jpg);
+    background-blend-mode: black;
+    background-position: center top;
+    background-size: 105% 105%;
+    transition: background-position 350ms;
+
+    overflow: hidden;
+}
+
+
+.square4:hover, .square1:focus-within {
+    background-position: center bottom;
+}
+
+/* .portfolio-item:hover {
+    transform: translateY(-14px)
+} */
 
 .square1 {
     grid-row: span 3;
@@ -171,62 +285,3 @@ i {
     grid-column: span 2
 }
 
-.square2 {
-    background-image: url(//unsplash.it/800/600);
-    color: aliceblue;
-    background-size: cover;
-    background-position: top left;
-    transition: all ease-in-out 300ms;
-    position: relative;
-}
-
-.square2 a {
-    position: absolute;
-}
-
-.square2::before {
-    content: '';
-    display: block;
-    background: black;
-    opacity: 0.8;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transition: all ease-in-out 300ms;
-}
-
-.square2:hover::before {
-    opacity: 0.2;
-}
-
-.square1 {
-    background-image: url(//unsplash.it/800/600);
-    color: aliceblue;
-    background-size: cover;
-    background-position: top left;
-    transition: all ease-in-out 300ms;
-    position: relative;
-}
-
-.square1 a {
-    position: absolute;
-}
-
-.square1::before {
-    content: '';
-    display: block;
-    background: black;
-    opacity: 0.8;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transition: all ease-in-out 300ms;
-}
-
-.square1:hover::before {
-    opacity: 0.2;
-}
